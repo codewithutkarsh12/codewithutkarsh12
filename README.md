@@ -142,7 +142,7 @@ If you're building something thoughtful around **software, AI or developer exper
 <div align="center">
 
 <a href="https://github.com/codewithutkarsh12"><img src="https://img.shields.io/badge/GitHub-Follow-161B22?style=for-the-badge&logo=github" alt="GitHub" /></a>
-<a href="https://www.linkedin.com/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://github.com/codewithutkarsh12?tab=repositories"><img src="https://img.shields.io/badge/PROJECTS-Explore-315BFF?style=for-the-badge&logo=github&logoColor=white" alt="Explore projects" /></a>
 
 <br/><br/>
 
