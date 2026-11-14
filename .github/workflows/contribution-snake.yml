@@ -1,6 +1,13 @@
 name: Refresh animated profile cards
 
 on:
+  push:
+    paths:
+      - 'README.md'
+      - 'assets/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/contribution-snake.yml'
   schedule:
     - cron: "23 0 * * *"
   workflow_dispatch:
