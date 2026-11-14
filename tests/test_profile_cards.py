@@ -32,6 +32,20 @@ class ProfileCardTests(unittest.TestCase):
         self.assertIn("4", svg)
         self.assertIn("contributions", svg)
 
+    def test_new_build_loop_and_original_hero_are_valid_svg(self):
+        ET.parse(ROOT / "assets" / "build-loop.svg")
+        hero = (ROOT / "assets" / "hero.svg").read_text(encoding="utf-8")
+        ET.fromstring(hero)
+        self.assertIn("Software × Applied AI", hero)
+
+    def test_readme_keeps_hero_and_adds_profile_sections(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn('src="assets/hero.svg"', readme)
+        self.assertIn("## Education", readme)
+        self.assertIn("## Engineering Experience", readme)
+        self.assertIn("## Skills & Tools", readme)
+        self.assertIn("## Featured Projects", readme)
+
     def test_all_generated_cards_are_well_formed_svg(self):
         data = {"total": 4, "days": [{"date": date.today().isoformat(), "count": 4}]}
         cards = [CARDS.graph(data), CARDS.monthly(data),
