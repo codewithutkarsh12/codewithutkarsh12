@@ -62,7 +62,7 @@ I build and iterate on personal software projects, taking ideas through planning
 <img src="https://skillicons.dev/icons?i=python,js,kotlin,c,html,css&theme=dark" alt="Python, JavaScript, Kotlin, C, HTML and CSS" />
 
 - **Project experience:** Python, JavaScript, Kotlin.
-- **Foundations in progress:** C, HTML and CSS.
+- **Foundations:** HTML; currently strengthening C and CSS.
 - **Web development:** responsive interfaces, frontend logic, API integration and debugging.
 
 ### AI, LLMs & Agent Engineering
@@ -88,13 +88,11 @@ I build and iterate on personal software projects, taking ideas through planning
 
 ## What I Build
 
-| Area | What I explore |
-|---|---|
-| **AI agents & automation** | Task decomposition, skill routing, multi-step workflows and tool orchestration |
-| **AI-powered products** | LLM integrations, Gemini-powered features and practical AI interfaces |
-| **Web applications** | Responsive websites, dashboards, frontend/backend integration and deployment |
-| **Android applications** | Kotlin-based apps, local data, app architecture and user workflows |
-| **Vibe coding** | Fast AI-assisted prototyping followed by code review, testing and refinement |
+- **AI agents & automation:** task decomposition, skill routing, multi-step workflows and tool orchestration.
+- **AI-powered products:** LLM integrations, Gemini-powered features and practical AI interfaces.
+- **Web applications:** responsive websites, dashboards, frontend/backend integration and deployment.
+- **Android applications:** Kotlin-based apps, local data, app architecture and user workflows.
+- **Vibe coding:** fast AI-assisted prototyping followed by code review, testing and refinement.
 
 ## Featured Projects
 
@@ -111,7 +109,7 @@ A Python foundation for turning complex prompts into structured, skill-powered w
 
 ### 🎓 [CampusResolve AI](https://github.com/codewithutkarsh12/campusresolve-ai)
 
-An AI-assisted campus incident intelligence prototype.
+An AI-assisted campus incident intelligence prototype · [Live demo](https://codewithutkarsh12-campusresolve-m1yktc6z1-utkarsh605s-projects.vercel.app).
 
 - Demonstrates incident reporting, structured triage, recurring-fault review and workflow tracking.
 - Includes an optional server-side Gemini integration and a clearly labelled deterministic demo fallback.
