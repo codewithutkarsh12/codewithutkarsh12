@@ -28,6 +28,9 @@ jobs:
       - name: Fetch public contribution calendar
         run: python scripts/fetch_contributions.py
 
+      - name: Verify profile card generation
+        run: python -m unittest discover -s tests -v
+
       - name: Render animated SVG cards
         run: python scripts/render_readme_cards.py
 
