@@ -26,14 +26,19 @@
 
 ## About Me
 
-I'm **Utkarsh Bhosale**, a BCA student and independent builder from Pune, India. I enjoy turning ideas into practical software — from web experiences and Android apps to AI-assisted tools and agent workflows.
+I'm **Utkarsh**, a BCA student in Pune who learns best by building. I like taking a rough idea, figuring out what it needs, and turning it into something people can try — whether that's a small web app, an Android project or an AI-assisted workflow.
 
-My current direction is **Software Engineering × Applied AI**: strong engineering fundamentals first, then reliable AI-powered products. I use AI tools to move faster, but I care about understanding the code, testing behaviour and reviewing what ships.
+I'm interested in the space where **software engineering meets applied AI**. I use AI tools to explore and prototype faster, but I don't treat generated code as finished work. I want to understand it, test it and make it better.
 
-- 🎓 Studying **Bachelor of Computer Applications (BCA)** at **Nutan Maharashtra Institute of Engineering and Technology (NMIET), PCET**, Talegaon Dabhade, Pune.
-- 🧠 Exploring **AI agents, prompt engineering, workflow orchestration and LLM-powered applications**.
-- 🛠️ Building with **Python, JavaScript and Kotlin**, while strengthening core programming and web fundamentals.
-- 🌱 Learning in public through experiments, projects and iteration.
+- 🎓 Studying **BCA** at **Nutan Maharashtra Institute of Engineering and Technology (NMIET), PCET**, Talegaon Dabhade, Pune.
+- 🧩 Building and experimenting with **Python, JavaScript and Kotlin**; strengthening C and web fundamentals.
+- 🤖 Exploring **AI agents, prompt design, tool use, workflow orchestration and LLM-powered apps**.
+- 🛠️ Interested in creating useful websites, Android apps, automations and developer tools.
+- 🌱 Learning through small builds, mistakes, feedback and steady improvement.
+
+<p align="center">
+  <img src="assets/focus-orbit.svg" alt="Three current focus areas: software engineering, applied AI and product building" width="100%" />
+</p>
 
 ## Education
 
@@ -41,58 +46,60 @@ My current direction is **Software Engineering × Applied AI**: strong engineeri
 Nutan Maharashtra Institute of Engineering and Technology (NMIET) · Pimpri Chinchwad Education Trust (PCET)  
 Talegaon Dabhade, Pune, Maharashtra, India · **2026 – Present**
 
-## Engineering Experience
+## Project-Based Experience
 
-### Independent Software Builder · Project-based experience
+Most of my hands-on experience comes from projects I've planned, built and improved myself. That work has taught me to:
 
-I build and iterate on personal software projects, taking ideas through planning, implementation, testing and deployment.
+- Break a broad idea into a smaller first version.
+- Use AI tools to explore approaches and speed up repetitive work.
+- Connect interfaces, application logic and APIs.
+- Track changes with Git and GitHub.
+- Test important paths, review generated code and write down known limitations.
 
-- Translate a problem into a small, buildable product scope.
-- Use AI-assisted development and prompt-driven prototyping without treating generated code as automatically correct.
-- Connect frontend experiences to APIs and backend workflows.
-- Use Git and GitHub to version, document and improve projects.
-- Review edge cases, run tests and document limitations before presenting a build.
-
-*This section describes independent project work, not paid employment or a claimed internship.*
+*This is independent project experience, not a formal job or internship.*
 
 ## Skills & Tools
 
-### Programming & Web
+### Software & Web
 
 <img src="https://skillicons.dev/icons?i=python,js,kotlin,c,html,css&theme=dark" alt="Python, JavaScript, Kotlin, C, HTML and CSS" />
 
-- **Project experience:** Python, JavaScript, Kotlin.
-- **Foundations:** HTML; currently strengthening C and CSS.
-- **Web development:** responsive interfaces, frontend logic, API integration and debugging.
+- **Used in projects:** Python, JavaScript and Kotlin.
+- **Learning now:** C, CSS, data structures and core programming concepts.
+- **Web work:** building responsive interfaces, connecting APIs and debugging front-end behaviour.
 
-### AI, LLMs & Agent Engineering
+### AI & Agent Workflows
 
-- Prompt design and structured task decomposition.
-- Gemini API integration and LLM-powered application prototypes.
-- Skill discovery, capability matching and workflow routing.
-- Agent workflow architecture, bounded execution and context management.
-- Structured output validation and safety-aware tool design.
-- AI-assisted / vibe-coded prototyping with human review and testing.
+I'm exploring how to make AI features useful and predictable:
 
-### App Development
+- Writing prompts and breaking larger requests into smaller tasks.
+- Connecting Gemini APIs to application prototypes.
+- Exploring skill discovery, tool selection and workflow routing.
+- Designing multi-step agent workflows with clear context and execution boundaries.
+- Checking structured outputs and keeping human review in the loop.
+- Using vibe coding for quick prototypes, then reading, testing and refining the generated code.
 
-- Android development with Kotlin.
-- Jetpack Compose, MVVM, Room and DataStore in the RepRise project.
-- Unit testing and Android-focused test workflows.
+### Android Development
 
-### Developer Tools & Platforms
+- Kotlin-based Android development through the RepRise project.
+- Project exposure to Jetpack Compose, MVVM, Room and DataStore.
+- Learning to structure app logic and test important behaviours.
+
+### Developer Tools
 
 <img src="https://skillicons.dev/icons?i=git,github,vscode,androidstudio,vercel&theme=dark" alt="Git, GitHub, VS Code, Android Studio and Vercel" />
 
-**AI development tools:** ChatGPT · Google Gemini · Google AI Studio · Antigravity
+**AI tools I work with:** ChatGPT · Google Gemini · Google AI Studio · Antigravity
+
+*These are areas of project use and active learning, not claims of expert-level proficiency.*
 
 ## What I Build
 
-- **AI agents & automation:** task decomposition, skill routing, multi-step workflows and tool orchestration.
-- **AI-powered products:** LLM integrations, Gemini-powered features and practical AI interfaces.
-- **Web applications:** responsive websites, dashboards, frontend/backend integration and deployment.
-- **Android applications:** Kotlin-based apps, local data, app architecture and user workflows.
-- **Vibe coding:** fast AI-assisted prototyping followed by code review, testing and refinement.
+- **AI-assisted apps:** useful features built around LLM APIs and clear user workflows.
+- **Agent experiments:** task breakdown, tool selection, routing and multi-step automation.
+- **Web projects:** responsive pages, dashboards and front-end experiences connected to APIs.
+- **Android apps:** Kotlin projects with local data and practical everyday features.
+- **Fast prototypes:** using AI to explore an idea quickly, then checking the code and improving the result.
 
 ## Featured Projects
 
@@ -130,11 +137,11 @@ A native Android habit-tracking project built around a progressive daily push-up
 
 ## Currently Learning
 
-- Data structures and algorithms, problem solving and computer science fundamentals.
-- Backend engineering, REST APIs, databases and SQL.
-- Python depth, clean code, testing and software architecture.
-- Applied AI: LLM applications, agent evaluation, RAG fundamentals and reliable tool use.
-- Cloud basics, deployment, Docker and CI/CD.
+- Data structures, algorithms and stronger computer science fundamentals.
+- Backend development, REST APIs, databases and SQL.
+- Writing cleaner Python, testing code and understanding software architecture.
+- Applied AI: LLM applications, RAG, agent evaluation and reliable tool use.
+- Cloud and deployment basics, including Docker and CI/CD.
 
 ## Learning & Credentials
 
@@ -142,7 +149,7 @@ A native Android habit-tracking project built around a progressive daily push-up
 
 ## How I Build
 
-I like a simple loop: understand the problem, plan the smallest useful version, use AI as a development accelerator, then verify the result before shipping.
+My usual approach is simple: understand the problem, choose a small first version, build it, test the important parts and improve what doesn't work. AI can speed up parts of that process, but the final checks still matter.
 
 <p align="center">
   <img src="assets/build-loop.svg" alt="Engineering workflow: Idea, Plan, Prompt, Build, Test, Review and Ship" width="100%" />
