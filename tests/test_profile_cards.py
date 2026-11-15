@@ -34,15 +34,21 @@ class ProfileCardTests(unittest.TestCase):
 
     def test_new_build_loop_and_original_hero_are_valid_svg(self):
         ET.parse(ROOT / "assets" / "build-loop.svg")
+        ET.parse(ROOT / "assets" / "focus-orbit.svg")
         hero = (ROOT / "assets" / "hero.svg").read_text(encoding="utf-8")
         ET.fromstring(hero)
         self.assertIn("Software × Applied AI", hero)
+        focus = (ROOT / "assets" / "focus-orbit.svg").read_text(encoding="utf-8")
+        self.assertIn("@keyframes orbitDash", focus)
+        self.assertIn("APPLIED AI", focus)
 
     def test_readme_keeps_hero_and_adds_profile_sections(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn('src="assets/hero.svg"', readme)
         self.assertIn("## Education", readme)
-        self.assertIn("## Engineering Experience", readme)
+        self.assertIn("## Project-Based Experience", readme)
+        self.assertIn("assets/focus-orbit.svg", readme)
+        self.assertIn("not a formal job or internship", readme)
         self.assertIn("## Skills & Tools", readme)
         self.assertIn("## Featured Projects", readme)
 
