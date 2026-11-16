@@ -26,10 +26,13 @@ def graph(d):
    cells.append(f'<rect x="{35+c*13}" y="{70+r*15}" width="10" height="10" rx="2" fill="{color}" {attr}/>')
  out=start(760,215,'Every day, in blue — GitHub contributions')
  out+='<text x="35" y="39" class="serif ink" font-size="27">Every day, <tspan fill="#315bff" font-style="italic">in blue</tspan></text><text x="725" y="38" text-anchor="end" class="mono muted" font-size="9" letter-spacing="1.4">REFRESHED DAILY</text>'+''.join(cells)
+ if not days:
+  out+='<rect x="170" y="91" width="420" height="47" rx="9" fill="#f3f2ee" fill-opacity=".96" stroke="#d9d9d4"/><text x="380" y="110" text-anchor="middle" class="sans ink" font-size="13" font-weight="600">Awaiting public activity data</text><text x="380" y="127" text-anchor="middle" class="mono muted" font-size="9">CHECK PROFILE VISIBILITY TO ENABLE REFRESH</text>'
  for i in range(12): out+=f'<text x="{35+i*56}" y="190" class="mono muted" font-size="9">{(date.today().replace(day=1)-timedelta(days=i*30)).strftime("%b")}</text>'
  out+='<text x="565" y="190" class="mono muted" font-size="9">less</text>'
  for i,c in enumerate(['#e4e4e1','#cbd5ff','#9db1ff','#6485ff',BLUE]): out+=f'<rect x="{595+i*15}" y="180" width="11" height="11" rx="2" fill="{c}"/>'
  return out+'<text x="678" y="190" class="mono muted" font-size="9">more</text>'+end()
+
 def monthly(d):
  days=sorted(d.get('days',[]),key=lambda x:x['date']); today=date.today(); months=[]
  for off in reversed(range(12)):
