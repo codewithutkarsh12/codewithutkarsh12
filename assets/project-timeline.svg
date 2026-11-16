@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+<title id="title">Utkarsh's project milestones</title>
+<desc id="desc">Three GitHub repositories created in October 2026: CampusResolve AI, RepRise and AUTO. The lower panel lists future goals, not completed achievements.</desc>
+<defs>
+ <linearGradient id="path" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#315bff"/><stop offset=".55" stop-color="#8ea7ff"/><stop offset="1" stop-color="#e98262"/></linearGradient>
+ <style>
+ .eyebrow{font:11px ui-monospace,monospace;letter-spacing:2px;fill:#a9b4ce}.name{font:600 20px Arial,Helvetica,sans-serif;fill:#f3f2ee}.copy{font:13px Arial,Helvetica,sans-serif;fill:#c5cde0}.date{font:11px ui-monospace,monospace;fill:#8ea7ff}.tag{font:10px ui-monospace,monospace;letter-spacing:1px;fill:#a9b4ce}.line{stroke:url(#path);stroke-width:3;stroke-dasharray:7 10;animation:travel 12s linear infinite}.node{fill:#101522;stroke:#8ea7ff;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 3.2s ease-in-out infinite}.n2{animation-delay:1s}.n3{animation-delay:2s}@keyframes travel{to{stroke-dashoffset:-170}}@keyframes pulse{0%,100%{opacity:.7;transform:scale(.9)}50%{opacity:1;transform:scale(1.13)}}@media(prefers-reduced-motion:reduce){.line,.node{animation:none}}
+ </style>
+</defs>
+<rect width="1200" height="410" rx="20" fill="#101522"/>
+<text x="38" y="38" class="eyebrow">BUILD LOG / 2026</text>
+<text x="1160" y="38" text-anchor="end" class="eyebrow">REPOSITORY CREATION MILESTONES</text>
+<path d="M190 105H1010" class="line"/>
+<circle cx="190" cy="105" r="10" class="node"/><circle cx="600" cy="105" r="10" class="node n2"/><circle cx="1010" cy="105" r="10" class="node n3"/>
+<g>
+ <rect x="35" y="132" width="350" height="120" rx="13" fill="#18233d" stroke="#344b85"/>
+ <text x="55" y="160" class="date">23 OCT 2026 · CREATED</text><text x="55" y="192" class="name">CampusResolve AI</text><text x="55" y="218" class="copy">Campus incident intelligence prototype</text><text x="55" y="238" class="tag">JAVASCRIPT · GEMINI · VERCEL</text>
+ <rect x="425" y="132" width="350" height="120" rx="13" fill="#18233d" stroke="#344b85"/>
+ <text x="445" y="160" class="date">23 OCT 2026 · CREATED</text><text x="445" y="192" class="name">RepRise</text><text x="445" y="218" class="copy">Android habit and push-up tracker</text><text x="445" y="238" class="tag">KOTLIN · JETPACK COMPOSE</text>
+ <rect x="815" y="132" width="350" height="120" rx="13" fill="#18233d" stroke="#344b85"/>
+ <text x="835" y="160" class="date">24 OCT 2026 · CREATED</text><text x="835" y="192" class="name">AUTO</text><text x="835" y="218" class="copy">AI skill orchestration foundation</text><text x="835" y="238" class="tag">PYTHON · AGENT WORKFLOWS</text>
+</g>
+<rect x="35" y="282" width="1130" height="92" rx="13" fill="#171d2d" stroke="#4b5d91" stroke-dasharray="5 6"/>
+<text x="58" y="309" class="eyebrow">NEXT / PLANNED MILESTONES — NOT YET COMPLETED</text>
+<g class="copy"><text x="58" y="342">01  Strengthen tests &amp; documentation</text><text x="430" y="342">02  Improve and publish useful project demos</text><text x="835" y="342">03  Contribute to open source &amp; pursue internships</text></g>
+<text x="1160" y="394" text-anchor="end" class="eyebrow">KEEP BUILDING · VERIFY · SHARE</text>
+</svg>
