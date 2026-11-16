@@ -24,6 +24,37 @@
 
 <!-- PROFILE-CARDS: generated animated SVG sections begin below. Existing hero above is intentionally preserved. -->
 
+## GitHub Activity
+
+<sub>Contribution counts and streaks are generated from GitHub’s public activity calendar and refresh daily. If the cards show an awaiting-data message, check the profile visibility settings below.</sub>
+
+<p align="center">
+  <img src="cards/contributions.svg" alt="GitHub contributions across the year, in blue" width="100%" />
+</p>
+
+<p align="center">
+  <img src="cards/monthly.svg" alt="Last 12 months of GitHub activity, monthly contributions and streak statistics" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/codewithutkarsh12?tab=repositories"><img src="cards/build.svg" alt="Build — software products and useful tools" width="32.5%" /></a>
+  <a href="https://github.com/codewithutkarsh12/auto-orchestrator"><img src="cards/agents.svg" alt="Agents — applied AI and intelligent systems" width="32.5%" /></a>
+  <a href="https://github.com/codewithutkarsh12?tab=repositories"><img src="cards/learn.svg" alt="Learn — engineering fundamentals and continuous learning" width="32.5%" /></a>
+</p>
+
+## Project Milestones
+
+<p align="center">
+  <img src="assets/project-timeline.svg" alt="Project timeline: CampusResolve AI and RepRise created October 23, 2026; AUTO created October 24, 2026; next planned goals are clearly marked" width="100%" />
+</p>
+
+The dates above are **GitHub repository creation dates**, not claims that the projects were completed or launched on those dates. The next milestones are goals, not completed achievements.
+
+- **AUTO:** strengthen orchestration tests, documentation and safe execution boundaries.
+- **CampusResolve AI:** improve the prototype, verify the demo and document production-readiness gaps.
+- **RepRise:** continue Android testing and refine the habit-tracking experience.
+- **Personal goals:** make meaningful open-source contributions and work towards internship opportunities.
+
 ## About Me
 
 I'm **Utkarsh**, a BCA student in Pune who learns best by building. I like taking a rough idea, figuring out what it needs, and turning it into something people can try — whether that's a small web app, an Android project or an AI-assisted workflow.
@@ -153,22 +184,6 @@ My usual approach is simple: understand the problem, choose a small first versio
 
 <p align="center">
   <img src="assets/build-loop.svg" alt="Engineering workflow: Idea, Plan, Prompt, Build, Test, Review and Ship" width="100%" />
-</p>
-
-## GitHub Activity
-
-<p align="center">
-  <img src="cards/contributions.svg" alt="GitHub contributions across the year, in blue" width="100%" />
-</p>
-
-<p align="center">
-  <img src="cards/monthly.svg" alt="Last 12 months of GitHub activity, monthly contributions and streak statistics" width="100%" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/codewithutkarsh12?tab=repositories"><img src="cards/build.svg" alt="Build — software products and useful tools" width="32.5%" /></a>
-  <a href="https://github.com/codewithutkarsh12/auto-orchestrator"><img src="cards/agents.svg" alt="Agents — applied AI and intelligent systems" width="32.5%" /></a>
-  <a href="https://github.com/codewithutkarsh12?tab=repositories"><img src="cards/learn.svg" alt="Learn — engineering fundamentals and continuous learning" width="32.5%" /></a>
 </p>
 
 ## More From My Workshop
