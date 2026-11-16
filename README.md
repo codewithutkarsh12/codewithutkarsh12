@@ -26,7 +26,7 @@
 
 ## GitHub Activity
 
-<sub>Contribution counts and streaks are generated from GitHub’s public activity calendar and refresh daily. If the cards show an awaiting-data message, check the profile visibility settings below.</sub>
+<sub>Activity cards refresh daily. When GitHub’s public contribution calendar is available, they show account-wide contributions; while profile visibility hides it, they show commits from the three featured public repositories only, clearly labelled.</sub>
 
 <p align="center">
   <img src="cards/contributions.svg" alt="GitHub contributions across the year, in blue" width="100%" />
