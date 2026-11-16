@@ -24,8 +24,10 @@ def graph(d):
    day=first+timedelta(days=c*7+r); n=lookup.get(day.isoformat(),0); level=0 if n==0 else 1 if n<=2 else 2 if n<=5 else 3 if n<=9 else 4
    color=['#e4e4e1','#cbd5ff','#9db1ff','#6485ff',BLUE][level]; attr='' if STATIC else f'class="enter" style="animation-delay:{(c*7+r)*.006:.3f}s"'
    cells.append(f'<rect x="{35+c*13}" y="{70+r*15}" width="10" height="10" rx="2" fill="{color}" {attr}/>')
- out=start(760,215,'Every day, in blue — GitHub contributions')
- out+='<text x="35" y="39" class="serif ink" font-size="27">Every day, <tspan fill="#315bff" font-style="italic">in blue</tspan></text><text x="725" y="38" text-anchor="end" class="mono muted" font-size="9" letter-spacing="1.4">REFRESHED DAILY</text>'+''.join(cells)
+ official=d.get('source','github_contributions')=='github_contributions'
+ source_label='GITHUB CONTRIBUTIONS' if official else 'FEATURED REPO COMMITS'
+ out=start(760,215,'Every day, in blue — '+source_label)
+ out+='<text x="35" y="39" class="serif ink" font-size="27">Every day, <tspan fill="#315bff" font-style="italic">in blue</tspan></text>'+f'<text x="725" y="38" text-anchor="end" class="mono muted" font-size="9" letter-spacing="1.4">{("REFRESHED DAILY" if official else "PUBLIC REPOS ONLY")}</text>'+''.join(cells)
  if not days:
   out+='<rect x="170" y="91" width="420" height="47" rx="9" fill="#f3f2ee" fill-opacity=".96" stroke="#d9d9d4"/><text x="380" y="110" text-anchor="middle" class="sans ink" font-size="13" font-weight="600">Awaiting public activity data</text><text x="380" y="127" text-anchor="middle" class="mono muted" font-size="9">CHECK PROFILE VISIBILITY TO ENABLE REFRESH</text>'
  for i in range(12): out+=f'<text x="{35+i*56}" y="190" class="mono muted" font-size="9">{(date.today().replace(day=1)-timedelta(days=i*30)).strftime("%b")}</text>'
@@ -37,26 +39,32 @@ def monthly(d):
  days=sorted(d.get('days',[]),key=lambda x:x['date']); today=date.today(); months=[]
  for off in reversed(range(12)):
   first=(today.replace(day=1)-timedelta(days=off*30)).replace(day=1); key=first.strftime('%Y-%m'); months.append((first.strftime('%b'),sum(x.get('count',0) for x in days if x['date'].startswith(key))))
- has=bool(days); total=int(d.get('total',sum(x.get('count',0) for x in days))) if has else None; active=sum(x.get('count',0)>0 for x in days); best=max(months,key=lambda x:x[1]); counts={x['date']:x.get('count',0) for x in days}
+ has=bool(days); official=d.get('source','github_contributions')=='github_contributions'; noun='contributions' if official else 'commits'
+ total=int(d.get('total',sum(x.get('count',0) for x in days))) if has else None; active=sum(x.get('count',0)>0 for x in days); best=max(months,key=lambda x:x[1]); counts={x['date']:x.get('count',0) for x in days}
  cur=0; day=today
  if counts.get(day.isoformat(),0)==0: day-=timedelta(days=1)
  while counts.get(day.isoformat(),0)>0: cur+=1; day-=timedelta(days=1)
  longest=run=0
  for x in days: run=run+1 if x.get('count',0)>0 else 0; longest=max(longest,run)
  busiest=max(days,key=lambda x:x.get('count',0),default={'count':0}).get('count',0)
- out=start(760,290,'The last 12 months on GitHub')+'<text x="34" y="38" class="mono muted" font-size="10" letter-spacing="1.3">THE LAST 12 MONTHS ON GITHUB</text>'
- out+=f'<text x="34" y="87" class="serif ink" font-size="39">{(format(total,",") if total is not None else "Awaiting data")} <tspan font-style="italic">{("contributions" if total is not None else "")}</tspan></text>'
+ heading='THE LAST 12 MONTHS ON GITHUB' if official else 'PUBLIC COMMITS IN FEATURED REPOS'
+ out=start(760,290,'The last 12 months — '+noun)+f'<text x="34" y="38" class="mono muted" font-size="10" letter-spacing="1.3">{heading}</text>'
+ out+=f'<text x="34" y="87" class="serif ink" font-size="39">{(format(total,",") if total is not None else "Awaiting data")} <tspan font-style="italic">{(noun if total is not None else "")}</tspan></text>'
  maxv=max([v for _,v in months]+[1]); base=222; bh=112; bw=34; gap=15
  for i,(label,val) in enumerate(months):
   h=max(3,bh*val/maxv); x=35+i*(bw+gap); y=base-h; color=BLUE if val==best[1] and val else INK; attr='' if STATIC else f'class="rise" style="animation-delay:{i*.07:.2f}s"'
   out+=f'<rect x="{x}" y="{y:.1f}" width="{bw}" height="{h:.1f}" rx="4" fill="{color}" {attr}/><text x="{x+bw/2}" y="244" text-anchor="middle" class="mono muted" font-size="9">{label}</text>'
   if val==best[1] and val: out+=f'<text x="{x+bw/2}" y="{y-8:.1f}" text-anchor="middle" class="mono blue" font-size="10">{val:,}</text>'
  out+='<path d="M500 28V263" stroke="#deded9"/>'
- stats=([(f'{cur} days','current streak'),(f'{longest} days','longest streak'),(f'{active} days','days with a contribution'),(str(busiest),'on the busiest day')] if days else [('—','current streak'),('—','longest streak'),('—','days with a contribution'),('—','on the busiest day')])
+ if days:
+  stats=[(f'{cur} days','current streak' if official else 'current commit streak'),(f'{longest} days','longest streak' if official else 'longest commit streak'),(f'{active} days','days with a contribution' if official else 'days with commits'),(str(busiest),'on the busiest day' if official else 'commits on the busiest day')]
+ else:
+  stats=[('—','current streak'),('—','longest streak'),('—','days with a contribution'),('—','on the busiest day')]
  for i,(v,lbl) in enumerate(stats):
   y=57+i*53; out+=f'<text x="525" y="{y}" class="serif ink" font-size="28">{e(v)}</text><text x="527" y="{y+17}" class="sans muted" font-size="11">{e(lbl)}</text>'
   if i<3: out+=f'<path d="M525 {y+28}H725" stroke="#deded9"/>'
  return out+end()
+
 def tile(kicker,headline,body,color,fg,delay):
  attr='' if STATIC else f'class="tile" style="animation-delay:{delay}s"'
  return start(240,180,kicker)+f'''<g {attr}><rect width="240" height="180" rx="15" fill="{color}"/><text x="20" y="28" class="mono" fill="{fg}" font-size="10" letter-spacing="1.4">{e(kicker)}</text><text x="20" y="87" class="serif" fill="{fg}" font-size="30" font-style="italic">{e(headline)}</text><text x="20" y="119" class="sans" fill="{fg}" font-size="12">{e(body[0])}</text><text x="20" y="137" class="sans" fill="{fg}" font-size="12">{e(body[1])}</text><text x="214" y="28" class="sans" fill="{fg}" font-size="17">↗</text><rect width="240" height="180" rx="15" fill="url(#shine)" opacity=".24" class="sweep"/></g>'''+end()
