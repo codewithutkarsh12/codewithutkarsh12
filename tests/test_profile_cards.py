@@ -18,6 +18,21 @@ class ProfileCardTests(unittest.TestCase):
         days = FETCH.parse_contribution_calendar(sample)
         self.assertEqual(days, [{"date": "2026-11-15", "count": 3}, {"date": "2026-11-16", "count": 0}])
 
+    def test_featured_repo_calendar_aggregates_real_commit_dates(self):
+        start = date(2026, 11, 14)
+        end = date(2026, 11, 16)
+        days = FETCH.build_commit_calendar(["2026-11-14T10:00:00Z", "2026-11-14T11:00:00Z", "2026-11-16T09:00:00Z"], start, end)
+        self.assertEqual([item["count"] for item in days], [2, 0, 1])
+
+    def test_fallback_activity_is_labelled_as_featured_repo_commits(self):
+        data = {"total": 3, "source": "featured_public_repos", "days": [{"date": date.today().isoformat(), "count": 3}]}
+        ET.fromstring(CARDS.graph(data))
+        monthly = CARDS.monthly(data)
+        ET.fromstring(monthly)
+        self.assertIn("FEATURED REPO COMMITS", CARDS.graph(data))
+        self.assertIn("commits", monthly)
+        self.assertIn("current commit streak", monthly)
+
     def test_calendar_parser_does_not_guess_from_color_level(self):
         sample = '<td data-date="2026-11-16" data-level="4"></td>'
         self.assertEqual(FETCH.parse_contribution_calendar(sample), [])
