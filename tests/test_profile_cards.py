@@ -8,8 +8,19 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("profile_cards", ROOT / "scripts" / "render_readme_cards.py")
 CARDS = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CARDS)
+FETCH_SPEC = importlib.util.spec_from_file_location("fetch_contributions", ROOT / "scripts" / "fetch_contributions.py")
+FETCH = importlib.util.module_from_spec(FETCH_SPEC)
+FETCH_SPEC.loader.exec_module(FETCH)
 
 class ProfileCardTests(unittest.TestCase):
+    def test_current_github_calendar_markup_is_parsed(self):
+        sample = '<table><td data-date="2026-11-15" data-level="2"><tool-tip aria-label="3 contributions on Nov 15, 2026">3 contributions on Nov 15, 2026</tool-tip></td><td data-date="2026-11-16" data-level="0"><tool-tip>No contributions on Nov 16, 2026</tool-tip></td></table>'
+        days = FETCH.parse_contribution_calendar(sample)
+        self.assertEqual(days, [{"date": "2026-11-15", "count": 3}, {"date": "2026-11-16", "count": 0}])
+
+    def test_calendar_parser_does_not_guess_from_color_level(self):
+        sample = '<td data-date="2026-11-16" data-level="4"></td>'
+        self.assertEqual(FETCH.parse_contribution_calendar(sample), [])
     def test_contribution_heatmap_is_valid_svg(self):
         svg = CARDS.graph({"total": 3, "days": [{"date": date.today().isoformat(), "count": 3}]})
         root = ET.fromstring(svg)
@@ -35,6 +46,7 @@ class ProfileCardTests(unittest.TestCase):
     def test_new_build_loop_and_original_hero_are_valid_svg(self):
         ET.parse(ROOT / "assets" / "build-loop.svg")
         ET.parse(ROOT / "assets" / "focus-orbit.svg")
+        ET.parse(ROOT / "assets" / "project-timeline.svg")
         hero = (ROOT / "assets" / "hero.svg").read_text(encoding="utf-8")
         ET.fromstring(hero)
         self.assertIn("Software × Applied AI", hero)
@@ -45,6 +57,13 @@ class ProfileCardTests(unittest.TestCase):
     def test_readme_keeps_hero_and_adds_profile_sections(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn('src="assets/hero.svg"', readme)
+        self.assertIn("## GitHub Activity", readme)
+        self.assertIn("## Project Milestones", readme)
+        self.assertLess(readme.index("## GitHub Activity"), readme.index("## About Me"))
+        self.assertLess(readme.index("## Project Milestones"), readme.index("## About Me"))
+        self.assertIn("AUTO", readme)
+        self.assertIn("CampusResolve AI", readme)
+        self.assertIn("RepRise", readme)
         self.assertIn("## Education", readme)
         self.assertIn("## Project-Based Experience", readme)
         self.assertIn("assets/focus-orbit.svg", readme)
