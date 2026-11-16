@@ -27,6 +27,12 @@ class ProfileCardTests(unittest.TestCase):
         self.assertEqual(root.tag, "{http://www.w3.org/2000/svg}svg")
         self.assertIn("Every day", svg)
 
+    def test_empty_heatmap_explains_why_activity_is_not_visible(self):
+        svg = CARDS.graph({"total": None, "days": []})
+        ET.fromstring(svg)
+        self.assertIn("Awaiting public activity data", svg)
+        self.assertIn("PROFILE VISIBILITY", svg)
+
     def test_empty_activity_never_invents_contribution_numbers(self):
         svg = CARDS.monthly({"total": None, "days": []})
         ET.fromstring(svg)
