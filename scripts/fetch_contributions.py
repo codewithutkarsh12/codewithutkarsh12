@@ -17,7 +17,7 @@ class ContributionCalendarParser(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == "td" and re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}", attrs.get("data-date", "")):
+        if tag == "td" and re.fullmatch(r"20\d{2}-\d{2}-\d{2}", attrs.get("data-date", "")):
             self.current = {"date": attrs["data-date"], "count": None}
             self.text = []
             self.labels = []
@@ -38,7 +38,7 @@ class ContributionCalendarParser(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "td" and self.current is not None:
             combined = " ".join(self.labels + self.text)
-            match = re.search(r"(\\d+)\\s+contributions?", combined, re.I)
+            match = re.search(r"(\d+)\s+contributions?", combined, re.I)
             if match:
                 self.current["count"] = int(match.group(1))
             elif re.search(r"no contributions", combined, re.I):
@@ -73,7 +73,7 @@ def main():
     payload = {"username": USER, "total": sum(day["count"] for day in days), "days": days}
     output = Path("data/contributions.json")
     output.parent.mkdir(exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2) + "\\n", encoding="utf-8")
+    output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(f"Fetched {len(days)} days and {payload['total']} contributions.")
 
 if __name__ == "__main__":
